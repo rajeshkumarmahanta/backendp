@@ -26,7 +26,11 @@ const nodemailer = require("nodemailer");
 require("dotenv").config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors({
+  origin:["https://rajesh-portfolio-frontend.vercel.app/"],
+  methods:["GET","POST","PUT","DELETE"],
+  credentials:true
+}));
 app.use(cookieParser());
 app.use(express.static("public"));
 app.get("/", (req, res) => {
