@@ -29,7 +29,7 @@ const handleMessageCreate = async(req,res)=>{
          });
            transporter.sendMail({
              from: process.env.MAIL_FROM,
-             to: process.env.TO,
+             to: process.env.MAIL_TO,
              subject: `Message from ${name}`,
              text: `name : ${name},\n email : ${email} \n message : ${message}`
            });
